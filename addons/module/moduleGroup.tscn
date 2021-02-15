@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/module/moduleGroup.gd" type="Script" id=1]
+
+[sub_resource type="Image" id=3]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "LumAlpha8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=2]
+flags = 4
+flags = 4
+image = SubResource( 3 )
+size = Vector2( 16, 16 )
+
+[node name="moduleGroup" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 22.0
+alignment = 2
+
+[node name="groupDirLabel" type="Label" parent="hbox"]
+margin_top = 4.0
+margin_right = 928.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="groupDirBtn" type="Button" parent="hbox"]
+margin_left = 932.0
+margin_right = 960.0
+margin_bottom = 22.0
+icon = SubResource( 2 )
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="createBtn" type="Button" parent="hbox"]
+margin_left = 964.0
+margin_right = 992.0
+margin_bottom = 22.0
+icon = SubResource( 2 )
+flat = true
+
+[node name="updateBtn" type="Button" parent="hbox"]
+margin_left = 996.0
+margin_right = 1024.0
+margin_bottom = 22.0
+icon = SubResource( 2 )
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="tableTree" type="Tree" parent="."]
+margin_top = 26.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+allow_reselect = true
+hide_root = true
+
+[node name="modulePopupMenu" type="PopupMenu" parent="tableTree"]
+margin_top = -26.0
+margin_right = 20.0
+margin_bottom = -6.0
+
+[node name="groupDirFileDialog" type="FileDialog" parent="tableTree"]
+margin_top = 444.0
+margin_right = 400.0
+margin_bottom = 644.0
+rect_min_size = Vector2( 400, 200 )
+popup_exclusive = true
+window_title = "Group Folder"
+resizable = true
+mode_overrides_title = false
+mode = 2
+show_hidden_files = true
+
+[node name="confirmDialog" type="ConfirmationDialog" parent="tableTree"]
+margin_top = -26.0
+margin_right = 200.0
+margin_bottom = 44.0
+popup_exclusive = true
+window_title = "Delete Group"
+[connection signal="pressed" from="hbox/groupDirBtn" to="." method="_on_groupDirBtn_pressed"]
+[connection signal="pressed" from="hbox/createBtn" to="." method="_on_createBtn_pressed"]
+[connection signal="pressed" from="hbox/updateBtn" to="." method="_on_updateBtn_pressed"]
+[connection signal="index_pressed" from="tableTree/modulePopupMenu" to="." method="_on_modulePopupMenu_index_pressed"]
+[connection signal="dir_selected" from="tableTree/groupDirFileDialog" to="." method="_on_groupDirFileDialog_dir_selected"]
+[connection signal="confirmed" from="tableTree/confirmDialog" to="." method="_on_confirmDialog_confirmed"]
