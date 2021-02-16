@@ -37,7 +37,7 @@ func _enter_tree():
 		fileDock.connect("folder_moved", self, "_on_fileDock_folder_moved")
 	
 #	if !Engine.has_singleton(MODULE_MANAGER_NAME):
-	add_autoload_singleton(MODULE_MANAGER_NAME, "res://addons/module/moduleManager.gd")
+	add_autoload_singleton(MODULE_MANAGER_NAME, get_script().get_path().get_base_dir() + "/moduleManager.gd")
 
 
 func _exit_tree():
