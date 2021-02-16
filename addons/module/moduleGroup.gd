@@ -172,7 +172,7 @@ func _on_createBtn_pressed():
 func _on_groupDirBtn_pressed():
 	var dialog = get_groupDir_fileDialog()
 	dialog.current_dir = data.groupPath
-	dialog.popup_centered(dialog)
+	dialog.popup_centered()
 
 
 func _on_modulePopupMenu_index_pressed(p_index):

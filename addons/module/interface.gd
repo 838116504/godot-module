@@ -46,12 +46,12 @@ func can_drop_data_fw(p_pos, p_data, p_from):
 			return true
 		0:
 			var item = p_from.get_item_at_position(p_pos)
-			if item && item.get_metadata(0) == "folder":
+			if item && item != p_data && item.get_metadata(0) == "folder":
 				p_from.drop_mode_flags = Tree.DROP_MODE_ON_ITEM | Tree.DROP_MODE_INBETWEEN
 				return true
 		-1, 1:
 			var item = p_from.get_item_at_position(p_pos)
-			if item && (item.get_parent().get_metadata(0) == "folder" || item.get_parent() == p_from.get_root()):
+			if item && item != p_data && (item.get_parent().get_metadata(0) == "folder" || item.get_parent() == p_from.get_root()):
 				p_from.drop_mode_flags = Tree.DROP_MODE_INBETWEEN
 				if item.get_metadata(0) == "folder":
 					p_from.drop_mode_flags |= Tree.DROP_MODE_ON_ITEM
@@ -64,6 +64,9 @@ func drop_data_fw(p_pos, p_data, p_from):
 		return
 	
 	var item = p_from.get_item_at_position(p_pos)
+	if p_data == item:
+		return
+	
 	var section = p_from.get_drop_section_at_position(p_pos)
 	var parent
 	match section:
@@ -75,7 +78,7 @@ func drop_data_fw(p_pos, p_data, p_from):
 			parent = item
 		_:
 			return
-	
+
 	if p_data.get_metadata(0) == "folder":
 		var dir = Directory.new()
 		var oldPath = data.interfaceDescPath + p_data.get_meta("data")
@@ -89,15 +92,18 @@ func drop_data_fw(p_pos, p_data, p_from):
 		data.load_data()
 		update_table()
 	elif p_data.get_metadata(0) == "interface":
-		var oldPath = data.interface_desc_get_path(p_data.get_meta("data"))
-		var dir := Directory.new()
-		if dir.file_exists(oldPath):
-			var newDir = ""
-			if parent != p_from.get_root():
-				newDir = parent.get_meta("data")
-			dir.rename(oldPath, data.interfaceDescPath + newDir + data.INTERFACE_DESC_FILE_PREFIX + p_data.get_text(0) + ".cfg")
+		var itf = p_data.get_meta("data")
+		var newDir = ""
+		if parent != p_from.get_root():
+			newDir = parent.get_meta("data")
 		
-		data.load_data()
+		var desc = ""
+		var params = ""
+		if data.interfaceDesc.has(itf):
+			desc = data.interfaceDesc[itf][1]
+			params = data.interfaceDesc[itf][2]
+		
+		data.set_interface_desc(itf, newDir, desc, params)
 		update_table()
 
 func get_drag_data_fw(p_pos, p_from):
@@ -135,16 +141,21 @@ func update_table():
 
 func add_folder_item(p_self:TreeItem, p_path:String):
 	var dir = Directory.new()
-	if !dir.open(data.moduleDescPath + p_path) == OK:
+	if !dir.open(data.interfaceDescPath + p_path) == OK:
 		return
 	
 	var table = get_table_tree()
 	if p_self != table.get_root():
+		p_self.set_cell_mode(0, TreeItem.CELL_MODE_STRING)
 		p_self.set_metadata(0, "folder")
-		p_self.set_text(0, p_path.get_basename().get_file())
 		p_self.set_icon(0, get_icon("Folder", "EditorIcons"))
+		if p_path[p_path.length() - 1] == "/":
+			p_self.set_text(0, p_path.substr(0, p_path.length() - 1).get_file())
+		else:
+			p_self.set_text(0, p_path.get_file())
 		p_self.set_meta("data", p_path)
 		p_self.set_tooltip(0, p_path)
+		p_self.set_editable(0, true)
 	
 	dir.list_dir_begin(true)
 	var filename = dir.get_next()
@@ -197,7 +208,7 @@ func _on_createFolderBtn_pressed():
 		dirName = "folder" + str(count)
 		count += 1
 	
-	dir.make_dir(data.moduleDescPath + dirName)
+	dir.make_dir(data.interfaceDescPath + dirName)
 	update_table()
 
 

@@ -68,12 +68,12 @@ func can_drop_data_fw(p_pos, p_data, p_from:Control):
 				return true
 			0:
 				var item = p_from.get_item_at_position(p_pos)
-				if item && item.get_metadata(0) == "folder":
+				if item && item != p_data && item.get_metadata(0) == "folder":
 					p_from.drop_mode_flags = Tree.DROP_MODE_ON_ITEM | Tree.DROP_MODE_INBETWEEN
 					return true
 			-1, 1:
 				var item = p_from.get_item_at_position(p_pos)
-				if item && (item.get_parent().get_metadata(0) == "folder" || item.get_parent() == p_from.get_root()):
+				if item && item != p_data && (item.get_parent().get_metadata(0) == "folder" || item.get_parent() == p_from.get_root()):
 					p_from.drop_mode_flags = Tree.DROP_MODE_INBETWEEN
 					if item.get_metadata(0) == "folder":
 						p_from.drop_mode_flags |= Tree.DROP_MODE_ON_ITEM
@@ -468,6 +468,7 @@ func _on_tableTree_item_activated():
 					var script = load(path)
 					if script && script is GDScript:
 						editorInterface.get_script_editor()._goto_script_line(script, 0)
+						get_parent().get_parent().hide()
 		"interface":
 			var itfPanel = get_node_or_null("../interface")
 			if itfPanel:

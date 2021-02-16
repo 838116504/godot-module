@@ -225,7 +225,7 @@ func bind_interface(p_itf:String, p_lv:int, p_obj, p_method:String, p_priority:i
 			r = t.size() - 1
 			while l <= r:
 				m = (l + r) / 2
-				if t[m][0] > bindData[0]:
+				if t[m][0] >= bindData[0]:
 					r = m - 1
 				else:
 					l = m + 1
@@ -280,7 +280,7 @@ func is_interface_binded(p_itf:String, p_lv:int, p_obj, p_method:String):
 func get_binded_interfaces():
 	return interfaces.keys()
 
-func call_interface(p_itf:String, p_args:Array):
+func call_interface(p_itf:String, p_args:Array = []):
 	if !interfaces.has(p_itf):
 		return null
 	
