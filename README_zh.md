@@ -7,8 +7,10 @@
 
 模块要开啟后才有用，为了方便开啟，可以打包N个模块成組，直接对这組开啟或关闭。組有自动加載功能，开啟这功能后当有和組名相同的路徑的节点加入場景时开啟該組，节点离开場景时关闭。
 
+
 # 安裝
 官方安裝插件文档︰[連結](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html)
+
 
 # 用法
 开啟插件后，在ProjectSettings会多了三个Tab(ModuleGroup、Module和Interface)。
@@ -52,6 +54,11 @@ Interface界面︰以接口分类來查看接口綁定的模块，只是方便�
 注意模板开啟多少次，就要关闭多少次才真正关闭，而模板組沒有这限制。
 
 接着就可以游戏場景的腳本调用moduleManager.call_interface(接口名 : String，參数 : Array = [])來间接调用已开啟的模块的方法。
+
+
+# 文档
+moduleManager︰[連結](https://shimo.im/docs/Qcx9q68VJ8TKpKcp/)
+
 
 # 原理
 模块組面板的tscn文件为moduleGroup.tscn，UI的處理代码主要在根节点的腳本里。
