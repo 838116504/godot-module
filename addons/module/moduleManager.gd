@@ -199,6 +199,12 @@ func get_modules():
 		dir.list_dir_end()
 	return ret
 
+func get_module_script(p_mod:String):
+	if modules.has(p_mod):
+		return modules[p_mod].callObj
+	
+	return null
+
 func bind_interface(p_itf:String, p_lv:int, p_obj, p_method:String, p_priority:int):
 	var bindData = [p_priority, p_obj, p_method]
 	var l:int
@@ -280,7 +286,7 @@ func is_interface_binded(p_itf:String, p_lv:int, p_obj, p_method:String):
 func get_binded_interfaces():
 	return interfaces.keys()
 
-func call_interface(p_itf:String, p_args:Array = []):
+remote func call_interface(p_itf:String, p_args:Array = []):
 	if !interfaces.has(p_itf):
 		return null
 	
