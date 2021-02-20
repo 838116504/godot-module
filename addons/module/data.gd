@@ -144,7 +144,8 @@ func save_group(p_name:String):
 		return
 	
 	var cfg = ConfigFile.new()
-	cfg.set_value("group", "auto", groups[p_name][0])
+	if groups[p_name][0]:
+		cfg.set_value("group", "auto", true)
 	cfg.set_value("group", "modules", groups[p_name][1])
 	cfg.save(groupPath + ModuleManager.MODULE_GROUP_FILE_PREFIX + p_name + ".cfg")
 
@@ -201,7 +202,7 @@ func erase_group(p_name:String):
 	if dir.file_exists(path):
 		dir.remove(path)
 
-func set_group_name(p_old:String, p_new:String):
+func group_set_name(p_old:String, p_new:String):
 	if !groups.has(p_old) || groups.has(p_new):
 		return
 	
@@ -215,7 +216,7 @@ func set_group_name(p_old:String, p_new:String):
 	else:
 		save_group(p_new)
 
-func set_group_auto(p_name:String, p_auto:bool):
+func group_set_auto(p_name:String, p_auto:bool):
 	if !groups.has(p_name):
 		return
 	

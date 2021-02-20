@@ -36,7 +36,7 @@ func _update_module_group():
 		if data && data[0]:
 			autoGroups[g] = [data[1], 0]
 
-func _ready():
+func _enter_tree():
 	if !get_tree().is_connected("node_added", self, "_on_tree_node_added"):
 		get_tree().connect("node_added", self, "_on_tree_node_added")
 	if !get_tree().is_connected("node_removed", self, "_on_tree_node_removed"):
@@ -85,7 +85,7 @@ func _load_group(p_group:String):
 	var path = _get_group_path(p_group)
 	var cfg = ConfigFile.new()
 	if cfg.load(path) == OK:
-		return [cfg.get_value("group", "auto"), cfg.get_value("group", "modules")]
+		return [cfg.get_value("group", "auto", false), cfg.get_value("group", "modules", [])]
 	return null
 
 func enable_module_group(p_group:String):

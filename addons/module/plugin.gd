@@ -36,7 +36,6 @@ func _enter_tree():
 	if !fileDock.is_connected("folder_moved", self, "_on_fileDock_folder_moved"):
 		fileDock.connect("folder_moved", self, "_on_fileDock_folder_moved")
 	
-#	if !Engine.has_singleton(MODULE_MANAGER_NAME):
 	add_autoload_singleton(MODULE_MANAGER_NAME, get_script().get_path().get_base_dir() + "/moduleManager.gd")
 
 
@@ -55,7 +54,7 @@ func _exit_tree():
 	if fileDock.is_connected("folder_moved", self, "_on_fileDock_folder_moved"):
 		fileDock.disconnect("folder_moved", self, "_on_fileDock_folder_moved")
 	
-#	remove_autoload_singleton(MODULE_MANAGER_NAME)
+	remove_autoload_singleton(MODULE_MANAGER_NAME)
 
 func _on_fileDock_file_removed(p_file:String):
 	if !data || !data.is_my_file(p_file):

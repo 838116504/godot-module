@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/module/moduleGroup.gd" type="Script" id=1]
 
-[sub_resource type="Image" id=3]
+[sub_resource type="Image" id=1]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -14,7 +14,7 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 3 )
+image = SubResource( 1 )
 size = Vector2( 16, 16 )
 
 [node name="moduleGroup" type="VBoxContainer"]
@@ -69,7 +69,6 @@ margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 2
 allow_reselect = true
 hide_root = true
 
@@ -80,9 +79,9 @@ margin_bottom = -6.0
 
 [node name="groupDirFileDialog" type="FileDialog" parent="tableTree"]
 margin_top = 444.0
-margin_right = 400.0
-margin_bottom = 644.0
-rect_min_size = Vector2( 400, 200 )
+margin_right = 600.0
+margin_bottom = 744.0
+rect_min_size = Vector2( 600, 300 )
 popup_exclusive = true
 window_title = "Group Folder"
 resizable = true
@@ -96,9 +95,20 @@ margin_right = 200.0
 margin_bottom = 44.0
 popup_exclusive = true
 window_title = "Delete Group"
+
+[node name="autoEnableFileDialog" type="FileDialog" parent="tableTree"]
+margin_right = 600.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 600, 300 )
+popup_exclusive = true
+window_title = "Select a node for auto enable"
+resizable = true
+mode_overrides_title = false
+mode = 0
 [connection signal="pressed" from="hbox/groupDirBtn" to="." method="_on_groupDirBtn_pressed"]
 [connection signal="pressed" from="hbox/createBtn" to="." method="_on_createBtn_pressed"]
 [connection signal="pressed" from="hbox/updateBtn" to="." method="_on_updateBtn_pressed"]
 [connection signal="index_pressed" from="tableTree/modulePopupMenu" to="." method="_on_modulePopupMenu_index_pressed"]
 [connection signal="dir_selected" from="tableTree/groupDirFileDialog" to="." method="_on_groupDirFileDialog_dir_selected"]
 [connection signal="confirmed" from="tableTree/confirmDialog" to="." method="_on_confirmDialog_confirmed"]
+[connection signal="file_selected" from="tableTree/autoEnableFileDialog" to="." method="_on_autoEnableFileDialog_file_selected"]
