@@ -72,7 +72,6 @@ func _on_tree_node_removed(p_node:Node):
 		autoGroups[groupName][1] -= 1
 		if autoGroups[groupName][1] <= 0:
 			disable_module_group(groupName)
-	print("[moduleManager]_on_tree_node_removed")
 
 func clear():
 	moduleGroups.clear()
