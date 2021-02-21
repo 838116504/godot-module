@@ -68,7 +68,6 @@ func add_group_item(p_name, p_isAuto, p_modules):
 	var child
 	for i in p_modules:
 		child = table.create_item(item)
-		child.set_cell_mode(1, TreeItem.CELL_MODE_STRING)
 		child.set_metadata(0, "module")
 		child.set_meta("data", i)
 		if data && data.moduleDesc.has(i):
@@ -118,7 +117,7 @@ func _on_tableTree_button_pressed(p_item, p_col, p_btnId):
 			menu.clear()
 			
 			for i in data.modules.keys():
-				if i in data.groups[p_item.get_text(1)][1]:
+				if i in data.groups[p_item.get_text(0)][1]:
 					continue
 				
 				if data.moduleDesc.has(i):

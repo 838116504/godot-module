@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/module/module.gd" type="Script" id=1]
 [ext_resource path="res://addons/module/createModuleDialog.gd" type="Script" id=2]
 [ext_resource path="res://addons/module/createFolderIcon_white.svg" type="Texture" id=3]
 [ext_resource path="res://addons/module/interfaceDialog.gd" type="Script" id=4]
 
-[sub_resource type="Image" id=3]
+[sub_resource type="Image" id=1]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -17,8 +17,28 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 3 )
+image = SubResource( 1 )
 size = Vector2( 16, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
 
 [node name="module" type="VBoxContainer"]
 anchor_right = 1.0
@@ -148,11 +168,12 @@ margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
 text = "Description"
 
-[node name="descEdit" type="LineEdit" parent="tableTree/createModuleDialog/vbox/descHbox"]
+[node name="descEdit" type="TextEdit" parent="tableTree/createModuleDialog/vbox/descHbox"]
 margin_left = 104.0
 margin_right = 584.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="versionHbox" type="HBoxContainer" parent="tableTree/createModuleDialog/vbox"]
 margin_top = 84.0
@@ -217,7 +238,7 @@ filters = PoolStringArray( "*.gd ; Godot Script" )
 margin_top = 140.0
 margin_right = 584.0
 margin_bottom = 182.0
-size_flags_vertical = 3
+rect_min_size = Vector2( 0, 42 )
 custom_constants/separation = 32
 alignment = 1
 
@@ -300,6 +321,11 @@ size_flags_horizontal = 3
 margin_left = 556.0
 margin_right = 584.0
 margin_bottom = 24.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 icon = SubResource( 2 )
 
 [node name="lvHbox" type="HBoxContainer" parent="tableTree/interfaceDialog/vbox"]
@@ -364,6 +390,11 @@ size_flags_horizontal = 3
 margin_left = 556.0
 margin_right = 584.0
 margin_bottom = 24.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
 icon = SubResource( 2 )
 
 [node name="btnsHbox" type="HBoxContainer" parent="tableTree/interfaceDialog/vbox"]

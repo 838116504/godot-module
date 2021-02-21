@@ -416,6 +416,7 @@ func _on_interfaceDialog_interface_menu_popup(p_popup:PopupMenu):
 		for i in keys.size():
 			p_popup.add_item(keys[i])
 			p_popup.set_item_tooltip(i, data.interfaceDesc[keys[i]][1])
+			p_popup.set_item_metadata(i, keys[i])
 
 func _on_interfaceDialog_method_menu_popup(p_popup:PopupMenu):
 	p_popup.clear()
@@ -428,6 +429,7 @@ func _on_interfaceDialog_method_menu_popup(p_popup:PopupMenu):
 				if script is GDScript:
 					for i in script.get_script_method_list():
 						p_popup.add_item(i.name)
+						p_popup.set_item_metadata(p_popup.get_item_count() - 1, i.name)
 
 func unbind_interface(p_data):
 	data.module_remove_interface_bind(p_data[0], p_data[1])

@@ -35,7 +35,6 @@ func get_method_btn():
 func get_method_popup():
 	return $vbox/methodHbox/methodBtn.get_popup()
 
-
 func _notification(p_what):
 	if p_what == NOTIFICATION_READY || p_what == EditorSettings.NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 		get_interface_btn().icon = get_icon("GuiDropdown", "EditorIcons")
@@ -85,9 +84,11 @@ func _on_methodEdit_text_changed(p_text):
 
 func _on_interfacePopup_index_pressed(p_index):
 	get_interface_edit().text = get_interface_popup().get_item_metadata(p_index)
+	_on_interfaceEdit_text_changed(get_interface_edit().text)
 
 func _on_methodPopup_index_pressed(p_index):
 	get_method_edit().text = get_method_popup().get_item_metadata(p_index)
+	_on_methodEdit_text_changed(get_method_edit().text)
 
 func _on_methodBtn_about_to_show():
 	emit_signal("method_menu_popup", get_method_popup())
