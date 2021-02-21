@@ -53,6 +53,8 @@ func _filename_to_group_name(p_filename:String):
 		p_filename = p_filename.substr("res://".length())
 	while "/" in p_filename:
 		p_filename = p_filename.replace("/", "-")
+	
+	return p_filename
 
 func _on_tree_node_added(p_node:Node):
 	if !p_node.filename:
@@ -130,7 +132,7 @@ func _enable_modules(p_mods:Array):
 			continue
 		
 		modules[mod] = Mod.new()
-		modules[mod].callObj = load(modData[0])
+		modules[mod].callObj = load(modData[0]).new()
 
 		for bind in modData[1]:
 			lv = bind[1]
@@ -171,8 +173,8 @@ func get_module_groups():
 		dir.list_dir_begin(true)
 		var filename = dir.get_next()
 		while filename != "":
-			if filename.get_extension() == "cfg" && filename.begins_with(groupPath):
-				ret.append(filename.get_basename().substr(groupPath.length()))
+			if filename.get_extension() == "cfg" && filename.begins_with(MODULE_GROUP_FILE_PREFIX):
+				ret.append(filename.get_basename().substr(MODULE_GROUP_FILE_PREFIX.length()))
 			filename = dir.get_next()
 		dir.list_dir_end()
 	return ret
