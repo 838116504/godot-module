@@ -237,7 +237,7 @@ func bind_interface(p_itf:String, p_lv:int, p_obj, p_method:String, p_priority:i
 					r = m - 1
 				else:
 					l = m + 1
-			t[m].insert(l, bindData)
+			t.insert(m, bindData)
 	else:
 		interfaces[p_itf] = [ [p_lv, bindData] ]
 
