@@ -80,10 +80,10 @@ func add_group_item(p_name, p_isAuto, p_modules):
 				child.set_icon(0, get_icon("ImportFail"), "EditorIcons")
 		else:
 			child.set_text(0, i)
-			if data && data.data.modules.has(i):
+			if data && data.modules.has(i):
 				child.set_icon(0, get_icon("InformationSign", "EditorIcons"))
 			else:
-				child.set_icon(0, get_icon("ImportFail"), "EditorIcons")
+				child.set_icon(0, get_icon("ImportFail", "EditorIcons"))
 
 		child.add_button(0, get_icon("Close", "EditorIcons"), BTN_ID_REMOVE_MODULE, false, "remove module")
 		child.disable_folding = true

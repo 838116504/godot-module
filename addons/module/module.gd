@@ -292,7 +292,7 @@ func edit_module(p_dialog):
 			get_error_dialog().popup_centered()
 			return
 		
-		data.rename(p_dialog.get_meta("module"), filename)
+		data.rename_module(p_dialog.get_meta("module"), filename)
 	
 	data.moduleDesc[filename] = [p_dialog.get_name_edit().text, p_dialog.get_desc_edit().text, p_dialog.get_version_edit().text]
 	data.save_module_desc(filename)

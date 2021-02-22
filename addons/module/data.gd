@@ -328,11 +328,18 @@ func rename_module(p_old:String, p_new:String):
 	
 	var bindPath = get_module_bind_path_by_name(p_old)
 	if dir.file_exists(bindPath):
-		dir.rename(bindPath, get_module_bind_path_by_name(p_old))
+		dir.rename(bindPath, get_module_bind_path_by_name(p_new))
 	
 	if modules.has(p_old):
 		modules[p_new] = modules[p_old]
 		modules.erase(p_old)
+	
+	for i in groups.keys():
+		for j in groups[i][1].size():
+			if groups[i][1][j] == p_old:
+				groups[i][1][j] = p_new
+				save_group(i)
+				break
 
 func module_add_interface_bind(p_mod:String, p_interface:String, p_lv:int, p_method:String, p_priority:int):
 	if !modules.has(p_mod):

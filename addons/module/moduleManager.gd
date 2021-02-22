@@ -1,4 +1,3 @@
-tool
 extends Node
 
 const MODULE_GROUP_FILE_PREFIX = "_mg_"
